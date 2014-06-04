@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           targetNamespace="http://ssoap.ps.com/MathService">
+    <xs:element name="MathServiceRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Number" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="MathServiceResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Number" type="xs:integer"/>
+                <xs:element name="isEven" type="xs:boolean" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
