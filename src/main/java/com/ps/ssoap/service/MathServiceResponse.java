@@ -6,7 +6,7 @@
 //
 
 
-package com.ps.ssoap;
+package com.ps.ssoap.service;
 
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;

@@ -6,4 +6,4 @@
 //
 
 @javax.xml.bind.annotation.XmlSchema(namespace = "http://ssoap.ps.com/MathService", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package com.ps.ssoap;
+package com.ps.ssoap.service;

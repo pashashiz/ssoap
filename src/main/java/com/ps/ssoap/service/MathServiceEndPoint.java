@@ -1,4 +1,4 @@
-package com.ps.ssoap;
+package com.ps.ssoap.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;

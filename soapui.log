@@ -1,0 +1,24 @@
+2014-06-12 18:38:03,721 WARN  [SoapUI] Missing folder [D:\TestProgects\ssoap\.\ext] for external libraries
+2014-06-12 18:38:03,915 INFO  [DefaultSoapUICore] initialized soapui-settings from [C:\Users\ppoh\soapui-settings.xml]
+2014-06-12 18:38:04,516 INFO  [WsdlProject] Loaded project from [file:/D:/TestProgects/ssoap/src/test/resources/MathService-soapui-project.xml]
+2014-06-12 18:38:04,516 WARN  [WsdlProject] Project 'MathService' is from a newer version (5.0.0) of soapUI than this (4.5.0) and parts of it may be incompatible or incorrect. Saving this project with this version of soapUI may cause it to function differently.
+2014-06-12 18:38:04,992 INFO  [SoapUITestCaseRunner] Running soapUI tests in project [MathService]
+2014-06-12 18:38:04,993 INFO  [SoapUITestCaseRunner] Running Project [MathService], runType = SEQUENTIAL
+2014-06-12 18:38:05,004 INFO  [SoapUITestCaseRunner] Running soapUI testcase [MathServiceTestCase 1]
+2014-06-12 18:38:05,011 INFO  [SoapUITestCaseRunner] running step [Properties]
+2014-06-12 18:38:05,050 INFO  [SoapUITestCaseRunner] running step [MathService - Request 1]
+2014-06-12 18:38:05,759 INFO  [log] 1
+2014-06-12 18:38:05,761 INFO  [SoapUITestCaseRunner] Assertion [SOAP Response] has status VALID
+2014-06-12 18:38:05,761 INFO  [SoapUITestCaseRunner] Assertion [Response SLA] has status VALID
+2014-06-12 18:38:05,761 INFO  [SoapUITestCaseRunner] Assertion [XPath Match] has status VALID
+2014-06-12 18:38:05,761 INFO  [SoapUITestCaseRunner] Assertion [Script Assertion] has status VALID
+2014-06-12 18:38:05,762 INFO  [SoapUITestCaseRunner] Assertion [Contains] has status VALID
+2014-06-12 18:38:05,762 INFO  [SoapUITestCaseRunner] running step [Delay]
+2014-06-12 18:38:05,767 INFO  [SoapUITestCaseRunner] running step [Conditional Goto]
+2014-06-12 18:38:05,773 ERROR [WsdlGotoTestStep] Error making condition Condition 1; java.lang.RuntimeException: net.sf.saxon.trans.XPathException: XPath syntax error at char 11 in {exist(true)}:
+    Unknown system function exist()
+2014-06-12 18:38:05,774 INFO  [SoapUITestCaseRunner] running step [MathService - Request2]
+2014-06-12 18:38:05,809 INFO  [SoapUITestCaseRunner] Assertion [SOAP Response] has status VALID
+2014-06-12 18:38:05,809 INFO  [SoapUITestCaseRunner] Assertion [XPath Match] has status VALID
+2014-06-12 18:38:05,810 INFO  [SoapUITestCaseRunner] Finished running soapUI testcase [MathServiceTestCase 1], time taken: 787ms, status: FINISHED
+2014-06-12 18:38:05,810 INFO  [SoapUITestCaseRunner] Project [MathService] finished with status [FINISHED] in 812ms

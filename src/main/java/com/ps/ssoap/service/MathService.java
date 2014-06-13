@@ -1,4 +1,4 @@
-package com.ps.ssoap;
+package com.ps.ssoap.service;
 
 import org.springframework.stereotype.Service;
 

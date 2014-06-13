@@ -1,0 +1,25 @@
+Status: FAILED
+Time Taken: 123
+Size: 0
+Timestamp: Thu Jun 12 13:57:07 EEST 2014
+TestStep: MathService - Request 1
+
+----------------- Messages ------------------------------
+org.apache.xmlbeans.impl.values.XmlValueOutOfRangeException: string value 'No Authorization' is not a valid enumeration value for type of authType element in Credentials in namespace http://eviware.com/soapui/config
+
+----------------- Properties ------------------------------
+Encoding: UTF-8
+Endpoint: http://localhost:8080/MathService
+
+---------------- Request ---------------------------
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mat="http://ssoap.ps.com/MathService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mat:MathServiceRequest>
+         <mat:Number>2</mat:Number>
+      </mat:MathServiceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+---------------- Response --------------------------
+- missing response / garbage collected -

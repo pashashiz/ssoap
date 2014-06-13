@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="MathService" resourceRoot="" defaultScriptLanguage="Groovy" soapui-version="5.0.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="ProjectSettings@hermesConfig">${#System#user.home}\.hermes</con:setting></con:settings><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="serviceSoap11" type="wsdl" bindingName="{http://ssoap.ps.com/MathService}serviceSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/MathService/MathService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/MathService/MathService.wsdl"><con:part><con:url>http://localhost:8080/MathService/MathService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://ssoap.ps.com/MathService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://ssoap.ps.com/MathService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ssoap.ps.com/MathService">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://ssoap.ps.com/MathService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="MathServiceRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Number" type="xs:integer"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="MathServiceResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Number" type="xs:integer"/>
+            <xs:element name="isEven" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="MathServiceRequest">
+    <wsdl:part element="tns:MathServiceRequest" name="MathServiceRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MathServiceResponse">
+    <wsdl:part element="tns:MathServiceResponse" name="MathServiceResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="service">
+    <wsdl:operation name="MathService">
+      <wsdl:input message="tns:MathServiceRequest" name="MathServiceRequest"></wsdl:input>
+      <wsdl:output message="tns:MathServiceResponse" name="MathServiceResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="serviceSoap11" type="tns:service">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="MathService">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="MathServiceRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="MathServiceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="serviceService">
+    <wsdl:port binding="tns:serviceSoap11" name="serviceSoap11">
+      <soap:address location="http://localhost:8080/MathService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/MathService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="MathService" bindingOperationName="MathService" type="Request-Response" outputName="MathServiceResponse" inputName="MathServiceRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1" wssPasswordType="" sslKeystore="" timeout=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">true</con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/MathService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mat="http://ssoap.ps.com/MathService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mat:MathServiceRequest>
+         <mat:Number>2</mat:Number>
+      </mat:MathServiceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:password/><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ssoap.ps.com/MathService/service/MathServiceRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite name="MathServiceTestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="MathServiceTestCase 1" searchProperties="true" id="d71868c3-23d5-4b64-af0d-bb5f1d1c4c86"><con:settings/><con:testStep type="properties" name="Properties"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>Number</con:name><con:value>2</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="request" name="MathService - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>serviceSoap11</con:interface><con:operation>MathService</con:operation><con:request name="MathService - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/MathService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mat="http://ssoap.ps.com/MathService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mat:MathServiceRequest>
+         <mat:Number>2</mat:Number>
+      </mat:MathServiceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="Response SLA Assertion" name="Response SLA"><con:configuration><SLA>1000</SLA></con:configuration></con:assertion><con:assertion type="XPath Match" name="XPath Match"><con:configuration><path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace mat='http://ssoap.ps.com/MathService';
+matches(//mat:isEven, 'true')</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" name="Script Assertion"><con:configuration><scriptText>import com.eviware.soapui.support.XmlHolder
+
+def holder = new XmlHolder(messageExchange.responseContentAsXml)
+holder.namespaces["mat"] = "http://ssoap.ps.com/MathService"
+def node = holder.getDomNode("//mat:isEven/text()")
+log.info(holder.getDomNode("count(//mat:isEven)").getData());
+assert node.getData()== "true"</scriptText></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>(?s).*&lt;\w*:Number>\d&lt;/\w*:Number>.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ssoap.ps.com/MathService/service/MathServiceRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="delay" name="Delay"><con:settings/><con:config><delay>5</delay></con:config></con:testStep><con:testStep type="goto" name="Conditional Goto"><con:settings/><con:config xsi:type="con:GotoStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:condition><con:name>Condition 1</con:name><con:type>XPATH</con:type><con:expression>exist(true)</con:expression><con:targetStep>MathService - Request 1</con:targetStep></con:condition></con:config></con:testStep><con:testStep type="request" name="MathService - Request2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>serviceSoap11</con:interface><con:operation>MathService</con:operation><con:request name="MathService - Request2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/MathService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mat="http://ssoap.ps.com/MathService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mat:MathServiceRequest>
+         <mat:Number>
+         ${Properties#Number}
+         </mat:Number>
+      </mat:MathServiceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="XPath Match" name="XPath Match"><con:configuration><path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace mat='http://ssoap.ps.com/MathService';
+//mat:Number</path><content>${Properties#Number}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties><con:property><con:name>pr2</con:name><con:value>val2</con:value></con:property></con:properties></con:testCase><con:properties><con:property><con:name>pr1</con:name><con:value>val1</con:value></con:property></con:properties></con:testSuite><con:properties><con:property><con:name>pr</con:name><con:value>val</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
